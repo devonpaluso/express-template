@@ -1,0 +1,59 @@
+
+
+Problem #1
+
+We have an array of users that we need to process. Once processed, we will add them to our database.
+
+To process a user, we need to make an api call to gather additional user information.
+
+Task: Create a solution to process the complete list of users.
+
+Constraints:
+    1. Avoid 429 rate limit errors from the api.
+    2. Handle 400 not found errors in the case a user does not exist.
+    3. Target lower run duration.
+
+
+
+
+Problem #2
+
+We have a project with an Express api backend and a React frontend.
+
+We have a modular backend, which includes a series of plugins that add functionality.
+    All plugins receive an instance of the PluginEnvironment type object.
+
+e.g.
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// ./src/app.ts
+const createEnvironment: (): PluginEnvironment => {
+    return {
+        logger: new Logger(),
+        env: envVariables(),
+        data: getData(),
+        etc: getEtc()
+    };
+};
+
+const fooPlugin = new FooPlugin(createEnvironment());
+const barPlugin = new BarPlugin(createEnvironment());
+
+app.listen(5000, () => {
+    console.log('Api listening on port 5000');
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+These plugins may have asynchronous methods which we would like to run manually.
+
+Task: Create a solution to allow the desired methods of plugins to be triggered from the frontend.
+
+Constraints:
+    1. Any services consumed by plugins must be through the PluginEnvironment.
+    2. Plugins should be able to expose these tasks dynamically.
+
+
+
+
