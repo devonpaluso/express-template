@@ -9,7 +9,7 @@ To process a user, we need to make an api call to gather additional user informa
 Task: Create a solution to process the complete list of users.
 
 Constraints:
-    1. Avoid 429 rate limit errors from the api.
+    1. Avoid 429 rate limit errors from the api. This api allows up to 5 concurrent requests.
     2. Handle 400 not found errors in the case a user does not exist.
     3. Target lower run duration.
 
